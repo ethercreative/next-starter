@@ -4,24 +4,24 @@ import { gql } from 'graphql-request';
 import { client } from '../client';
 import { Text } from 'ether-ui';
 
-const Home = ({ home }: InferGetStaticPropsType<typeof getStaticProps>) => (
-  <Page seo={home.seo!}>
-    <Text>Home</Text>
+const Post = ({ post }: InferGetStaticPropsType<typeof getStaticProps>) => (
+  <Page seo={post.seo!}>
+    <Text>post</Text>
   </Page>
 );
 
 type Data = {
-  home: Home_Home_Entry;
+  post: Post_Post_Entry;
 };
 
 export const getStaticProps: GetStaticProps<Data> = async (context) => {
-  const { home } = await client(
+  const { post } = await client(
     context.preview ? context.previewData?.previewToken : undefined,
   ).request<Data>(
     gql`
       query {
-        home: entry(slug: "home") {
-          ... on home_home_Entry {
+        post: entry(slug: "post") {
+          ... on post_post_Entry {
             id
             slug
             title
@@ -37,10 +37,34 @@ export const getStaticProps: GetStaticProps<Data> = async (context) => {
 
   return {
     props: {
-      home,
+      post,
     },
     revalidate: 1,
   };
 };
 
-export default Home;
+type Posts = {
+  posts: Post_Post_Entry[];
+};
+
+export const getStaticPaths = async () => {
+  const { posts } = await client.request<Posts>(
+    gql`
+      query {
+        posts: entries(section: "post") {
+          ... on post_post_Entry {
+            id
+            slug
+          }
+        }
+      }
+    `,
+  );
+
+  return {
+    paths: posts.map(({ slug }) => ({ params: { slug } })),
+    fallback: false,
+  };
+};
+
+export default Post;
