@@ -1,3 +1,5 @@
+cp .env.example .env;
+
 brew install\
   jpegoptim\
   optipng\
