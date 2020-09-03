@@ -1,0 +1,27 @@
+{
+  "name": "project-name",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "graph": "graphql-codegen --config codegen.yml"
+  },
+  "dependencies": {},
+  "devDependencies": {},
+  "eslintConfig": {
+    "extends": "universe/web"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{jpeg,jpg,png,svg}": [
+      "node ./asset-optim.js",
+      "git add"
+    ]
+  }
+}
