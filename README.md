@@ -1,6 +1,6 @@
 # Next Starter
 
-This is a quick-start boilerplate for Next.js projects. It sets up Next.js, TypeScript, TypeScript Codegen, Preact, Sentry, Ether UI, Tailwind CSS, GraphQL, ESLint, Prettier and commit-time asset optimisations.
+This is a quick-start boilerplate for Next.js projects. It sets up Next.js, TypeScript, TypeScript Codegen, Preact, Sentry, Ether UI, Tailwind CSS (with PurgeCSS), GraphQL, ESLint, Prettier and commit-time asset optimisations.
 
 Recommended deployment is [Vercel](https://vercel.app).
 
