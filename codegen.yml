@@ -2,7 +2,7 @@ overwrite: true
 schema:
   - ${GRAPH_URL}:
       headers:
-        Authorization: Bearer ${GRAPH_KEY}
+        Authorization: Bearer ${GRAPH_TOKEN}
 generates:
   types/types.d.ts:
     plugins:
