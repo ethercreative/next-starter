@@ -1,6 +1,10 @@
 # Next Starter
 
-This is a quick-start boilerplate for Next.js projects. It sets up Next.js, TypeScript, TypeScript Codegen, Preact, Sentry, Ether UI, Tailwind CSS (with PurgeCSS), GraphQL, ESLint, Prettier and commit-time asset optimisations.
+This is a quick-start boilerplate for Next.js projects.
+
+It sets up Next.js, TypeScript, TypeScript Codegen, Preact, Sentry, Ether UI, Tailwind CSS (with PurgeCSS), GraphQL, ESLint, Prettier and commit-time asset optimisations.
+
+Back-end is assumed to be Craft CMS (with live preview support!). The only files this matters for is `pages/_example.tsx` and `pages/api/preview.ts`, which can be deleted/ignored if using another system.
 
 Recommended deployment is [Vercel](https://vercel.app).
 
@@ -24,7 +28,7 @@ Once you've hooked up your GraphQL endpoint, run `yarn types` to automatically g
 
 ## Static exports
 
-See `_example.tsx` for [ISR SSG](https://nextjs.org/docs/basic-features/data-fetching#getstaticprops-static-generation).
+See `pages/_example.tsx` for [ISR SSG](https://nextjs.org/docs/basic-features/data-fetching#getstaticprops-static-generation).
 
 ## Why Preact?
 
