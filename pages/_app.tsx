@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import type { AppProps } from 'next/app';
 import * as Sentry from '@sentry/react';
 import { Integrations } from '@sentry/tracing';
