@@ -5,6 +5,10 @@ module.exports = {
       './pages/**/*.tsx',
       './node_modules/ether-ui/**/*.tsx',
     ],
+    preserveHtmlElements: false,
+    options: {
+      keyframes: true,
+    },
   },
   theme: {
     extend: {},
