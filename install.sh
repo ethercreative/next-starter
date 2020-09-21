@@ -47,3 +47,5 @@ yarn add --dev\
   react-refresh\
   tailwindcss\
   typescript;
+
+rm install.sh;
