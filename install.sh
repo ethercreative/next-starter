@@ -7,7 +7,6 @@ brew install\
 
 yarn add\
   @sentry/react\
-  @sentry/tracing\
   dayjs\
   ether-ui\
   graphql\
