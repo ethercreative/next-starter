@@ -17,7 +17,6 @@ yarn add\
   react@github:preact-compat/react#1.0.0\
   react-dom@github:preact-compat/react-dom#1.0.0\
   react-map-gl\
-  react-spring\
   react-ssr-prepass;
 
 yarn add --dev\
