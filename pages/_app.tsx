@@ -19,7 +19,7 @@ if (process.env.NODE_ENV === 'production' && process.env.SENTRY_DSN) {
 }
 
 const App = ({ Component, pageProps }: AppProps) => (
-  <Grid gap='24'>
+  <Grid gapY={{ default: '16', md: '24' }}>
     <Header />
     <Component {...pageProps} />
     <Footer />
