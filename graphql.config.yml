@@ -1,0 +1,4 @@
+schema:
+  - ${GRAPH_URL}:
+      headers:
+        Authorization: Bearer ${GRAPH_TOKEN}
