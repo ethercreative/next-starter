@@ -48,7 +48,7 @@ type Posts = {
 };
 
 export const getStaticPaths = async () => {
-  const { posts } = await client.request<Posts>(
+  const { posts } = await client().request<Posts>(
     gql`
       query {
         posts: entries(section: "post") {
