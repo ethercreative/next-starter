@@ -1,6 +1,9 @@
 import * as React from 'react';
-import { Text } from 'ether-ui';
 
-const Footer: React.FC = () => <Text>Footer</Text>;
+const Footer: React.FC = () => (
+  <footer>
+    <p>footer</p>
+  </footer>
+);
 
 export default Footer;

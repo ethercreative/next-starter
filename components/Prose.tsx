@@ -6,11 +6,11 @@ interface Props {
 
 const Prose: React.FC<Props> = ({ content }) => (
   <div
-    className='grid gap-5'
+    className='grid gap-y-5'
     dangerouslySetInnerHTML={{
       __html: content.replace(
         /<p>/g,
-        '<p class="text-sm md:text-base leading-relaxed">',
+        '<p class="text-sm md:text-base leading-relaxed -my-1">',
       ),
     }}
   />

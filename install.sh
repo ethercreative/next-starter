@@ -6,24 +6,22 @@ brew install\
   svgo;
 
 yarn add\
-  @sentry/react\
   dayjs\
-  ether-ui\
   graphql\
   graphql-request\
   next\
+  next-plugin-preact\
   preact\
   preact-render-to-string\
-  react@github:preact-compat/react#1.0.0\
-  react-dom@github:preact-compat/react-dom#1.0.0\
+  react@npm:@preact/compat\
+  react-dom@npm:@preact/compat\
   react-map-gl\
-  react-ssr-prepass;
+  react-ssr-prepass@npm:preact-ssr-prepass;
 
 yarn add --dev\
   @graphql-codegen/typescript\
   @graphql-codegen/cli\
   @graphql-codegen/typescript-operations\
-  @next/bundle-analyzer\
   @prefresh/next\
   @types/express\
   @types/node\

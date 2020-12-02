@@ -2,11 +2,10 @@ import * as React from 'react';
 import { GetStaticProps, InferGetStaticPropsType } from 'next';
 import { gql } from 'graphql-request';
 import { client } from '../client';
-import { Text } from 'ether-ui';
 
 const Post = ({ post }: InferGetStaticPropsType<typeof getStaticProps>) => (
   <Page seo={post.seo!}>
-    <Text>post</Text>
+    <p>post</p>
   </Page>
 );
 
@@ -39,7 +38,7 @@ export const getStaticProps: GetStaticProps<Data> = async (context) => {
     props: {
       post,
     },
-    revalidate: 1,
+    revalidate: 120,
   };
 };
 

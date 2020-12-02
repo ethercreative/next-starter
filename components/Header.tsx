@@ -1,6 +1,10 @@
 import * as React from 'react';
-import { Text } from 'ether-ui';
 
-const Header: React.FC = () => <Text>Header</Text>;
+const Header: React.FC = () => (
+  <header className='flex flex-row justify-between'>
+    <p>logo</p>
+    <p>nav</p>
+  </header>
+);
 
 export default Header;
