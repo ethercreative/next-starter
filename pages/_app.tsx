@@ -1,6 +1,5 @@
 import * as React from 'react';
 import type { AppProps } from 'next/app';
-import * as Sentry from '@sentry/react';
 import { Footer, Header } from '../components';
 import '../public/style.css';
 
