@@ -2,12 +2,21 @@ import * as React from 'react';
 import { GetStaticProps, InferGetStaticPropsType } from 'next';
 import { gql } from 'graphql-request';
 import { client } from '../client';
+import { Fallback } from '../components';
 
-const Post = ({ post }: InferGetStaticPropsType<typeof getStaticProps>) => (
-  <Page seo={post.seo!}>
-    <p>post</p>
-  </Page>
-);
+const Post = ({ post }: InferGetStaticPropsType<typeof getStaticProps>) => {
+  const router = useRouter();
+
+  if (router.isFallback) {
+    return <Fallback />;
+  }
+
+  return (
+    <Page seo={post.seo!}>
+      <p>post</p>
+    </Page>
+  );
+};
 
 type Data = {
   post: Post_Post_Entry;
