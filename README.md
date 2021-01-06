@@ -18,10 +18,6 @@ Edit `GRAPH_URL`, `GRAPH_TOKEN` and `SENTRY_DSN` in `.env`.
 
 Run `yarn dev` and visit `http://localhost:3000` to start developing!
 
-## Ether UI
-
-See [Ether UI](https://github.com/ethercreative/ui) for more information.
-
 ## TypeScript types
 
 Once you've hooked up your GraphQL endpoint, run `yarn types` to automatically generate the types from your schema.
