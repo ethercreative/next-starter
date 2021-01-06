@@ -14,7 +14,7 @@ Clone the repo, then run:
 
 `chmod +x install.sh && ./install.sh`
 
-Edit `GRAPH_URL`, `GRAPH_TOKEN` and `SENTRY_DSN` in `.env`.
+Edit `GRAPH_URL` and `GRAPH_TOKEN` in `.env`.
 
 Run `yarn dev` and visit `http://localhost:3000` to start developing!
 
