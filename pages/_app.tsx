@@ -4,7 +4,7 @@ import { Footer, Header } from '../components';
 import '../public/style.css';
 
 const App = ({ Component, pageProps }: AppProps) => (
-  <div className='gap-y-16 md:gap-y-24'>
+  <div className='grid gap-y-16 md:gap-y-24'>
     <Header />
     <Component {...pageProps} />
     <Footer />
