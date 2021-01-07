@@ -23,9 +23,7 @@ type Data = {
 };
 
 export const getStaticProps: GetStaticProps<Data> = async (context) => {
-  const { post } = await client(
-    context.preview ? context.previewData?.previewToken : undefined,
-  ).request<Data>(
+  const { post } = await client(context).request<Data>(
     gql`
       query {
         post: entry(slug: "post") {
