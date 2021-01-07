@@ -1,8 +1,9 @@
 import * as React from 'react';
 import { GetStaticProps, InferGetStaticPropsType } from 'next';
+import { useRouter } from 'next/router';
 import { gql } from 'graphql-request';
 import { client } from '../client';
-import { Fallback } from '../components';
+import { Fallback, Page } from '../components';
 
 const Post = ({ post }: InferGetStaticPropsType<typeof getStaticProps>) => {
   const router = useRouter();
@@ -69,7 +70,7 @@ export const getStaticPaths = async () => {
 
   return {
     paths: posts.map(({ slug }) => ({ params: { slug } })),
-    fallback: false,
+    fallback: true,
   };
 };
 
