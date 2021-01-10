@@ -41,7 +41,7 @@ yarn add --dev\
   postcss-preset-env\
   prettier\
   react-refresh\
-  tailwindcss\
+  tailwindcss@1.9.6\
   typescript;
 
 rm install.sh;
