@@ -26,7 +26,7 @@ type Data = {
 export const getStaticProps: GetStaticProps<Data> = async (context) => {
   const { post } = await client(context).request<Data>(
     gql`
-      query {
+      query GetPost {
         post: entry(slug: "post") {
           ... on post_post_Entry {
             id
@@ -57,7 +57,7 @@ type Posts = {
 export const getStaticPaths = async () => {
   const { posts } = await client().request<Posts>(
     gql`
-      query {
+      query GetPosts {
         posts: entries(section: "post") {
           ... on post_post_Entry {
             id
