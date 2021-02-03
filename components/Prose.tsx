@@ -20,7 +20,7 @@ const Prose: React.FC<Props> = ({ content }) => {
 
   return (
     <div
-      className='grid gap-5'
+      className='grid gap-y-5'
       dangerouslySetInnerHTML={{
         __html: (_content ?? '')
           .replace(/<p><\/p>/g, '')
