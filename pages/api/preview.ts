@@ -11,7 +11,7 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
 
   const { entry } = await client().request(
     gql`
-      query($uid: String) {
+      query GetPreview($uid: String) {
         entry(uid: [$uid]) {
           url
         }
