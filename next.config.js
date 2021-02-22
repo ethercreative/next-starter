@@ -12,11 +12,11 @@ module.exports = withPreact({
     return [
       {
         source: '/sitemap.xml',
-        destination: `${process.env.GRAPH_URL}/sitemap.xml`,
+        destination: `${process.env.ADMIN_URL}/sitemap.xml`,
       },
       {
         source: '/sitemap:path.xml',
-        destination: `${process.env.GRAPH_URL}/sitemap:path.xml`,
+        destination: `${process.env.ADMIN_URL}/sitemap:path.xml`,
       },
     ];
   },
