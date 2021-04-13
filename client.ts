@@ -7,8 +7,8 @@ export const client = (
 ): GraphQLClient => {
   let endpoint = process.env.GRAPH_URL ?? '';
 
-  if (context?.preview) {
-    endpoint += `?token=${context.previewData?.token}`;
+  if (context?.previewData?.previewToken) {
+    endpoint += `?token=${context.previewData?.previewToken}`;
   }
 
   return new GraphQLClient(endpoint, {
