@@ -4,6 +4,7 @@ module.exports = withPreact({
   experimental: {
     modern: true,
     polyfillsOptimization: true,
+    optimizeCss: true,
   },
   async redirects() {
     return [];
