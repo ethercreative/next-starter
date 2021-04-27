@@ -9,6 +9,15 @@ module.exports = withPreact({
     return [];
   },
   async rewrites() {
-    return [];
+    return [
+      {
+        source: '/sitemap.xml',
+        destination: `${process.env.ADMIN_URL}/sitemap.xml`,
+      },
+      {
+        source: '/sitemap:path.xml',
+        destination: `${process.env.ADMIN_URL}/sitemap:path.xml`,
+      },
+    ];
   },
 });

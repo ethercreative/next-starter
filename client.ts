@@ -3,12 +3,12 @@ import { GraphQLClient } from 'graphql-request';
 import { ParsedUrlQuery } from 'querystring';
 
 export const client = (
-  context: GetStaticPropsContext<ParsedUrlQuery>,
+  context?: GetStaticPropsContext<ParsedUrlQuery>,
 ): GraphQLClient => {
   let endpoint = process.env.GRAPH_URL ?? '';
 
-  if (context.preview) {
-    endpoint += `?token=${context.previewData?.token}`;
+  if (context?.previewData?.previewToken) {
+    endpoint += `?token=${context.previewData?.previewToken}`;
   }
 
   return new GraphQLClient(endpoint, {
