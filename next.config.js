@@ -21,4 +21,8 @@ module.exports = withPreact({
       },
     ];
   },
+  i18n: {
+    locales: ['en'],
+    defaultLocale: 'en',
+  },
 });
