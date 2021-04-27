@@ -6,7 +6,16 @@ module.exports = {
     },
   },
   theme: {
-    extend: {},
+    colors: {
+      transparent: 'transparent',
+      white: '#fff',
+      black: '#000',
+    },
+    extend: {
+      screens: {
+        xl: '1480px',
+      },
+    },
   },
   variants: {},
   plugins: [],
