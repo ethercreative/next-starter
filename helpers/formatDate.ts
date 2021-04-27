@@ -6,12 +6,4 @@ dayjs.extend(advancedFormat);
 export const formatDate = (
   date: string = '',
   format: string = 'DD/MM/YYYY',
-): string => {
-  let formattedDate = dayjs(date).format(format);
-
-  if (formattedDate === 'Invalid Date') {
-    formattedDate = 'N/A';
-  }
-
-  return formattedDate;
-};
+): string => dayjs(date).format(format);
