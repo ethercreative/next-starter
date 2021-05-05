@@ -4,6 +4,19 @@ module.exports = withPreact({
   experimental: {
     optimizeCss: true,
   },
+  async headers() {
+    return [
+      {
+        source: '/(.*?)',
+        headers: [
+          {
+            key: 'Permission-Policy',
+            value: 'interest-cohort=()',
+          },
+        ],
+      },
+    ];
+  },
   async redirects() {
     return [];
   },
