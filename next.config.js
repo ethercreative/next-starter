@@ -7,7 +7,7 @@ module.exports = withPreact({
   async headers() {
     return [
       {
-        source: '/(.*?)',
+        source: '/:path*',
         headers: [
           {
             key: 'Permission-Policy',
