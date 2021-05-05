@@ -9,9 +9,7 @@
     "types": "graphql-codegen --config codegen.yml -r dotenv/config"
   },
   "dependencies": {},
-  "devDependencies": {
-    "critters": "^0.0.10"
-  },
+  "devDependencies": {},
   "eslintConfig": {
     "extends": "universe/web"
   },

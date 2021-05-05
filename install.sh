@@ -27,6 +27,7 @@ yarn add --dev\
   @types/react-dom\
   @typescript-eslint/eslint-plugin\
   @typescript-eslint/parser\
+  critters\
   eslint\
   eslint-config-universe\
   husky\
