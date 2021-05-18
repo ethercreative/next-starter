@@ -1,10 +1,5 @@
 cp .env.example .env;
 
-brew install\
-  jpegoptim\
-  optipng\
-  svgo;
-
 yarn add\
   dayjs\
   graphql\
@@ -31,12 +26,6 @@ yarn add --dev\
   critters\
   eslint\
   eslint-config-universe\
-  husky\
-  imagemin\
-  imagemin-jpegoptim\
-  imagemin-optipng\
-  imagemin-svgo\
-  lint-staged\
   postcss\
   prettier\
   react-refresh\

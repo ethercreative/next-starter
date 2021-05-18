@@ -12,16 +12,5 @@
   "devDependencies": {},
   "eslintConfig": {
     "extends": "universe/web"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
-  "lint-staged": {
-    "*.{jpeg,jpg,png,svg}": [
-      "node ./asset-optim.js",
-      "git add"
-    ]
   }
 }
