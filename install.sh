@@ -27,6 +27,7 @@ yarn add --dev\
   @types/react-dom\
   @typescript-eslint/eslint-plugin\
   @typescript-eslint/parser\
+  autoprefixer\
   critters\
   eslint\
   eslint-config-universe\
@@ -36,10 +37,10 @@ yarn add --dev\
   imagemin-optipng\
   imagemin-svgo\
   lint-staged\
-  postcss-preset-env\
+  postcss\
   prettier\
   react-refresh\
-  tailwindcss@1.9.6\
+  tailwindcss\
   typescript;
 
 rm install.sh;
