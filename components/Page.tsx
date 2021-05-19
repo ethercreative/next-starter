@@ -2,7 +2,12 @@ import * as React from 'react';
 import Head from 'next/head';
 
 interface Props {
-  seo: Ether_SeoData;
+  // Uncomment this once hooked up to Craft and types have been generated
+  // seo: Ether_SeoData;
+  seo: {
+    title: string;
+    description: string;
+  };
 }
 
 const Page: React.FC<Props> = ({ seo, children }) => (
