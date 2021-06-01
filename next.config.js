@@ -1,6 +1,4 @@
-const withPreact = require('next-plugin-preact');
-
-module.exports = withPreact({
+module.exports = {
   experimental: {
     optimizeCss: true,
   },
@@ -51,4 +49,4 @@ module.exports = withPreact({
     locales: ['en'],
     defaultLocale: 'en',
   },
-});
+};

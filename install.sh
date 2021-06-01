@@ -5,18 +5,13 @@ yarn add\
   graphql\
   graphql-request\
   next\
-  next-plugin-preact\
-  preact\
-  preact-render-to-string\
-  react@npm:@preact/compat\
-  react-dom@npm:@preact/compat\
-  react-ssr-prepass@npm:preact-ssr-prepass;
+  react\
+  react-dom;
 
 yarn add --dev\
-  @graphql-codegen/typescript\
   @graphql-codegen/cli\
+  @graphql-codegen/typescript\
   @graphql-codegen/typescript-operations\
-  @prefresh/next\
   @types/node\
   @types/react\
   @types/react-dom\
@@ -28,7 +23,6 @@ yarn add --dev\
   eslint-config-universe\
   postcss\
   prettier\
-  react-refresh\
   tailwindcss\
   typescript;
 
