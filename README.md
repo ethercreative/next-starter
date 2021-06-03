@@ -2,7 +2,7 @@
 
 This is a quick-start boilerplate for Next.js projects.
 
-It sets up Next.js, TypeScript, TypeScript Codegen, Tailwind CSS (with PurgeCSS), GraphQL, ESLint and Prettier.
+It sets up Next.js, TypeScript, TypeScript Codegen, Tailwind CSS (with PurgeCSS and critical CSS), GraphQL, ESLint and Prettier.
 
 Back-end is assumed to be Craft CMS (with live preview support!). The only files this matters for is `pages/_example.tsx` and `pages/api/preview.ts`, which can be deleted/ignored if using another system.
 
