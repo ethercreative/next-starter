@@ -28,7 +28,7 @@ See `pages/_example.tsx` for [ISR SSG](https://nextjs.org/docs/basic-features/da
 
 ## Live Previewing
 
-In order for Craft's live preview function to work, you must use `/api/preview?entryUid={sourceUid}` as the preview target in the channel/section settings.
+In order for Craft's live preview function to work, you must use `/api/preview?entryUid={sourceUid}` as the preview target in the section settings.
 
 ## Learn More
 
