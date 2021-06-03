@@ -26,6 +26,10 @@ Once you've hooked up your GraphQL endpoint, run `yarn types` to automatically g
 
 See `pages/_example.tsx` for [ISR SSG](https://nextjs.org/docs/basic-features/data-fetching#getstaticprops-static-generation).
 
+## Live Previewing
+
+In order for Craft's live preview function to work, you must use `/api/preview?entryUid={sourceUid}` as the preview target in the channel/section settings.
+
 ## Learn More
 
 To learn more about Next.js, take a look at the following resources:
