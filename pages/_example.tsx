@@ -19,9 +19,9 @@ const Post = ({ post }: InferGetStaticPropsType<typeof getStaticProps>) => {
   );
 };
 
-type Data = {
+interface Data {
   post: Post_Post_Entry;
-};
+}
 
 export const getStaticProps: GetStaticProps<Data> = async (context) => {
   const { post } = await client(context).request<Data>(
@@ -50,9 +50,9 @@ export const getStaticProps: GetStaticProps<Data> = async (context) => {
   };
 };
 
-type Posts = {
+interface Posts {
   posts: Post_Post_Entry[];
-};
+}
 
 export const getStaticPaths = async () => {
   const { posts } = await client().request<Posts>(
