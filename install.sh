@@ -20,6 +20,7 @@ yarn add --dev\
   autoprefixer\
   critters\
   eslint\
+  eslint-config-next\
   eslint-config-universe\
   postcss\
   prettier\
