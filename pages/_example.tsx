@@ -24,7 +24,7 @@ interface Data {
 }
 
 export const getStaticProps: GetStaticProps<Data> = async (context) => {
-  const { post } = await client(context).request<Data>(
+  const data = await client(context).request<Data>(
     gql`
       query GetPost {
         post: entry(slug: "post") {
@@ -44,9 +44,9 @@ export const getStaticProps: GetStaticProps<Data> = async (context) => {
 
   return {
     props: {
-      post,
+      ...data,
     },
-    revalidate: 120,
+    revalidate: 10,
   };
 };
 
