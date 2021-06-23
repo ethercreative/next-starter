@@ -2,7 +2,7 @@ import { NextApiRequest, NextApiResponse } from 'next';
 import { gql } from 'graphql-request';
 import { client } from '../../client';
 
-export default async (req: NextApiRequest, res: NextApiResponse) => {
+const preview = async (req: NextApiRequest, res: NextApiResponse) => {
   if (!req.query.entryUid) {
     return res
       .status(401)
@@ -32,3 +32,5 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
 
   res.redirect(entry.url);
 };
+
+export default preview;

@@ -6,11 +6,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
+    "lint": "next lint",
     "types": "graphql-codegen --config codegen.yml -r dotenv/config"
   },
   "dependencies": {},
-  "devDependencies": {},
-  "eslintConfig": {
-    "extends": "universe/web"
-  }
+  "devDependencies": {}
 }
