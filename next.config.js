@@ -17,7 +17,7 @@ module.exports = {
           },
           {
             key: 'X-Frame-Options',
-            value: 'SAMEORIGIN',
+            value: process.env.X_FRAME_OPTIONS ?? 'SAMEORIGIN',
           },
           {
             key: 'X-XSS-Protection',
