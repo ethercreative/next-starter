@@ -3,17 +3,18 @@ import { GetStaticProps, InferGetStaticPropsType } from 'next';
 import { useRouter } from 'next/router';
 import { gql } from 'graphql-request';
 import { client } from '../client';
+import { formatStaticPaths } from '../helpers/formatStaticPaths';
 import { Fallback, Page } from '../components';
 
 const Post = ({ post }: InferGetStaticPropsType<typeof getStaticProps>) => {
-  const router = useRouter();
+  const { isFallback } = useRouter();
 
-  if (router.isFallback) {
+  if (isFallback) {
     return <Fallback />;
   }
 
   return (
-    <Page seo={post.seo!}>
+    <Page seo={post.seo}>
       <p>post</p>
     </Page>
   );
@@ -26,8 +27,8 @@ interface Data {
 export const getStaticProps: GetStaticProps<Data> = async (context) => {
   const data = await client(context).request<Data>(
     gql`
-      query GetPost {
-        post: entry(slug: "post") {
+      query GetPost($slug: String!) {
+        post: entry(slug: [$slug]) {
           ... on post_post_Entry {
             id
             slug
@@ -40,38 +41,29 @@ export const getStaticProps: GetStaticProps<Data> = async (context) => {
         }
       }
     `,
+    { slug: context.params.slug },
   );
 
   return {
     props: {
       ...data,
     },
-    revalidate: 10,
+    revalidate: process.env.REVALIDATE_INTERVAL ?? 10,
   };
 };
 
-interface Posts {
-  posts: Post_Post_Entry[];
-}
-
 export const getStaticPaths = async () => {
-  const { posts } = await client().request<Posts>(
+  const { posts } = await client().request(
     gql`
-      query GetPosts {
+      query GetPostSlugs {
         posts: entries(section: "post") {
-          ... on post_post_Entry {
-            id
-            slug
-          }
+          slug
         }
       }
     `,
   );
 
-  return {
-    paths: posts.map(({ slug }) => ({ params: { slug } })),
-    fallback: true,
-  };
+  return formatStaticPaths(posts);
 };
 
 export default Post;
