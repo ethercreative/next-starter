@@ -48,7 +48,7 @@ export const getStaticProps: GetStaticProps<Data> = async (context) => {
     props: {
       ...data,
     },
-    revalidate: process.env.REVALIDATE_INTERVAL ?? 10,
+    revalidate: Number(process.env.REVALIDATE_INTERVAL) ?? 10,
   };
 };
 
