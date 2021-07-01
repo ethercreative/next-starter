@@ -2,6 +2,9 @@ module.exports = {
   experimental: {
     optimizeCss: true,
   },
+  images: {
+    domains: ['project.ethr.dev', 'project.ams3.cdn.digitaloceanspaces.com'],
+  },
   async headers() {
     return [
       {
