@@ -21,6 +21,7 @@ yarn add --dev\
   critters\
   eslint\
   eslint-config-next\
+  eslint-config-prettier\
   postcss\
   prettier\
   tailwindcss\
