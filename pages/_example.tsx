@@ -27,7 +27,7 @@ interface Data {
 export const getStaticProps: GetStaticProps<Data> = async (context) => {
   const data = await client(context).request<Data>(
     gql`
-      query GetPost($slug: String!) {
+      query Post($slug: String!) {
         post: entry(slug: [$slug]) {
           ... on post_post_Entry {
             id
@@ -55,7 +55,7 @@ export const getStaticProps: GetStaticProps<Data> = async (context) => {
 export const getStaticPaths = async () => {
   const { posts } = await client().request(
     gql`
-      query GetPostSlugs {
+      query PostSlugs {
         posts: entries(section: "post") {
           slug
         }
