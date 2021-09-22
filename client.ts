@@ -9,7 +9,7 @@ interface PreviewData {
 export const client = (
   context?: GetStaticPropsContext<ParsedUrlQuery>,
 ): GraphQLClient => {
-  let endpoint = process.env.GRAPH_URL ?? '';
+  let endpoint = process.env.NEXT_PUBLIC_GRAPH_URL ?? '';
   const previewData = (context?.previewData as PreviewData) ?? null;
 
   if (previewData?.previewToken) {
@@ -18,7 +18,9 @@ export const client = (
 
   return new GraphQLClient(endpoint, {
     headers: {
-      Authorization: `Bearer ${process.env.GRAPH_TOKEN}`,
+      Authorization: process.env.GRAPH_TOKEN
+        ? `Bearer ${process.env.GRAPH_TOKEN}`
+        : '',
     },
   });
 };
