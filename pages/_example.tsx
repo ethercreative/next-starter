@@ -3,7 +3,7 @@ import { GetStaticProps, InferGetStaticPropsType } from 'next';
 import { useRouter } from 'next/router';
 import { gql } from 'graphql-request';
 import { client } from '../client';
-import { formatStaticPaths } from '../helpers/formatStaticPaths';
+import { formatStaticPaths } from '@/helpers/formatStaticPaths';
 import { Fallback, Page } from '@/components';
 
 const Post = ({ post }: InferGetStaticPropsType<typeof getStaticProps>) => {
