@@ -18,6 +18,18 @@ Edit `GRAPH_URL` and `GRAPH_TOKEN` in `.env`.
 
 Run `yarn dev` and visit `http://localhost:3000` to start developing!
 
+## Component/asset aliases
+
+To import components via an alias (e.g. `import { Button } from '@/components'`), add the following to the `compilerOptions` object once your `tsconfig.json` file has been generated (the first time you run `yarn dev`):
+
+```json
+"baseUrl": ".",
+"paths": {
+  "@/components": ["components"],
+  "@/assets": ["public/assets"],
+}
+```
+
 ## TypeScript types
 
 Once you've hooked up your GraphQL endpoint, run `yarn types` to automatically generate the types from your schema.
