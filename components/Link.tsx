@@ -10,7 +10,7 @@ interface Props {
   style?: React.CSSProperties;
 }
 
-const Anchor: React.FC<Props> = ({
+export const Anchor: React.FC<Props> = ({
   href = '',
   scroll = true,
   replace,
@@ -25,5 +25,3 @@ const Anchor: React.FC<Props> = ({
     </a>
   </Link>
 );
-
-export default Anchor;

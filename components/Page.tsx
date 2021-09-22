@@ -10,15 +10,13 @@ interface Props {
   };
 }
 
-const Page: React.FC<Props> = ({ seo, children }) => (
+export const Page: React.FC<Props> = ({ seo, children }) => (
   <>
     <Head>
       <title>{seo.title}</title>
       <meta name='description' content={seo.description} />
     </Head>
 
-    {children}
+    <main>{children}</main>
   </>
 );
-
-export default Page;

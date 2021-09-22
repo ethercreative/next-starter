@@ -1,7 +1,5 @@
 import * as React from 'react';
 
-const Container: React.FC = ({ children }) => (
-  <div className='w-full px-6 mx-auto xl:container md:px-10'>{children}</div>
+export const Container: React.FC = ({ children }) => (
+  <div className='w-full xl:container px-6 md:px-10 mx-auto'>{children}</div>
 );
-
-export default Container;

@@ -1,6 +1,6 @@
-export { default as Container } from './Container';
-export { default as Fallback } from './Fallback';
-export { default as Footer } from './Footer';
-export { default as Header } from './Header';
-export { default as Link } from './Link';
-export { default as Page } from './Page';
+export { Container } from './Container';
+export { Fallback } from './Fallback';
+export { Footer } from './Footer';
+export { Header } from './Header';
+export { Anchor as Link } from './Link';
+export { Page } from './Page';
