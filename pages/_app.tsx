@@ -1,6 +1,6 @@
 import * as React from 'react';
 import type { AppProps } from 'next/app';
-import { Footer, Header } from '../components';
+import { Footer, Header } from '@/components';
 import '../public/style.css';
 
 const App = ({ Component, pageProps }: AppProps) => (

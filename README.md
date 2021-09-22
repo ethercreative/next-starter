@@ -18,14 +18,16 @@ Edit `GRAPH_URL` and `GRAPH_TOKEN` in `.env`.
 
 Run `yarn dev` and visit `http://localhost:3000` to start developing!
 
-## Component/asset aliases
+## Import aliases
 
-To import components via an alias (e.g. `import { Button } from '@/components'`), add the following to the `compilerOptions` object once your `tsconfig.json` file has been generated (the first time you run `yarn dev`):
+To use import aliases (e.g. `import { Button } from '@/components'`), add the following to the `compilerOptions` object once your `tsconfig.json` file has been generated (the first time you run `yarn dev`):
 
 ```json
 "baseUrl": ".",
 "paths": {
   "@/components": ["components"],
+  "@/helpers": ["public/helpers"],
+  "@/hooks": ["public/hooks"],
   "@/assets": ["public/assets"],
 }
 ```
