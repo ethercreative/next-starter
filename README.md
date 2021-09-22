@@ -27,10 +27,10 @@ To use import aliases (e.g. `import { Button } from '@/components'`), add the fo
 "paths": {
   "@/components": ["components"],
   "@/components/*": ["components/*"],
-  "@/helpers": ["public/helpers"],
-  "@/helpers/*": ["public/helpers/*"],
-  "@/hooks": ["public/hooks"],
-  "@/hooks/*": ["public/hooks/*"],
+  "@/helpers": ["helpers"],
+  "@/helpers/*": ["helpers/*"],
+  "@/hooks": ["hooks"],
+  "@/hooks/*": ["hooks/*"],
   "@/assets": ["public/assets"],
   "@/assets/*": ["public/assets/*"],
 }
