@@ -1,6 +1,10 @@
 module.exports = {
   experimental: {
-    optimizeCss: true,
+    optimizeCss: {
+      inlineFonts: true,
+      preloadFonts: true,
+      fonts: true,
+    },
   },
   images: {
     domains: ['project.ethr.dev', 'project.ams3.cdn.digitaloceanspaces.com'],
