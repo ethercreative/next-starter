@@ -6,9 +6,7 @@ interface KeyVal {
   [x: string]: AllowedValues;
 }
 
-export const useFormReducer = <FormTypes extends KeyVal>(
-  initialValues: FormTypes,
-) => {
+export const useForm = <FormTypes extends KeyVal>(initialValues: FormTypes) => {
   type FieldName = keyof typeof initialValues;
 
   interface UpdatedValue {
