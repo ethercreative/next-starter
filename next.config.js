@@ -33,6 +33,15 @@ module.exports = {
           },
         ],
       },
+      {
+        source: '/fonts/(.*)',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=315360000',
+          },
+        ],
+      },
     ];
   },
   async redirects() {
