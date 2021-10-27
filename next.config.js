@@ -8,6 +8,7 @@ module.exports = {
   },
   images: {
     domains: ['project.ethr.dev', 'project.ams3.cdn.digitaloceanspaces.com'],
+    formats: ['image/avif', 'image/webp'],
     minimumCacheTTL: 315360000,
   },
   async headers() {
