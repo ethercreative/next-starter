@@ -12,11 +12,7 @@ module.exports = {
       white: '#fff',
       black: '#000',
     },
-    extend: {
-      screens: {
-        xl: '1480px',
-      },
-    },
+    extend: {},
   },
   variants: {},
   plugins: [],
