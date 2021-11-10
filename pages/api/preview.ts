@@ -12,7 +12,7 @@ const preview = async (req: NextApiRequest, res: NextApiResponse) => {
   const { entry } = await client().request(
     gql`
       query Preview($uid: String) {
-        entry(uid: [$uid]) {
+        entry(uid: [$uid], status: null) {
           url
         }
       }
