@@ -1,5 +1,5 @@
 import * as React from 'react';
-import Link from 'next/link';
+import NextLink from 'next/link';
 
 interface Props {
   href: string;
@@ -10,7 +10,7 @@ interface Props {
   style?: React.CSSProperties;
 }
 
-export const Anchor: React.FC<Props> = ({
+export const Link: React.FC<Props> = ({
   href = '',
   scroll = true,
   replace,
@@ -19,9 +19,9 @@ export const Anchor: React.FC<Props> = ({
   style = {},
   children = null,
 }) => (
-  <Link href={href} scroll={scroll} replace={replace} prefetch={prefetch}>
+  <NextLink href={href} scroll={scroll} replace={replace} prefetch={prefetch}>
     <a className={className} style={style}>
       {children}
     </a>
-  </Link>
+  </NextLink>
 );
