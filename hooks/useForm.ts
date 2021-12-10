@@ -21,12 +21,12 @@ export const useForm = <FormTypes extends KeyVal>(initialValues: FormTypes) => {
 
   const [state, dispatch] = React.useReducer(reducer, initialValues);
 
-  const onChange = (key: FieldName, value: AllowedValues) => {
+  const onChange = React.useCallback((key: FieldName, value: AllowedValues) => {
     dispatch({
       key,
       value,
     });
-  };
+  }, []);
 
   return { state, onChange };
 };
