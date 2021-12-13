@@ -3,7 +3,6 @@ cp .env.example .env;
 yarn add\
   dayjs\
   fake-tag\
-  graphql\
   next\
   react\
   react-dom;
