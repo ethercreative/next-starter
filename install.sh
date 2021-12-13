@@ -2,8 +2,8 @@ cp .env.example .env;
 
 yarn add\
   dayjs\
+  gql-tag\
   graphql\
-  graphql-request\
   next\
   react\
   react-dom;
