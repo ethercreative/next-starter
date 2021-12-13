@@ -20,20 +20,10 @@ Run `yarn dev` and visit `http://localhost:3000` to start developing!
 
 ## Import aliases
 
-To use import aliases (e.g. `import { Button } from '@/components'`), add the following to the `compilerOptions` object once your `tsconfig.json` file has been generated (the first time you run `yarn dev`):
+To use import aliases (e.g. `import { Button } from 'components'`), add the following to the `compilerOptions` object once your `tsconfig.json` file has been generated (the first time you run `yarn dev`):
 
 ```json
-"baseUrl": ".",
-"paths": {
-  "@/components": ["components"],
-  "@/components/*": ["components/*"],
-  "@/helpers": ["helpers"],
-  "@/helpers/*": ["helpers/*"],
-  "@/hooks": ["hooks"],
-  "@/hooks/*": ["hooks/*"],
-  "@/assets": ["public/assets"],
-  "@/assets/*": ["public/assets/*"],
-}
+"baseUrl": "."
 ```
 
 ## TypeScript types

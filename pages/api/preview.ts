@@ -1,6 +1,6 @@
 import { NextApiRequest, NextApiResponse } from 'next';
 import gql from 'gql-tag';
-import { client } from '../../client';
+import { client } from 'client';
 
 const preview = async (req: NextApiRequest, res: NextApiResponse) => {
   if (!req.query.entryUid) {

@@ -2,7 +2,7 @@ import * as React from 'react';
 import type { AppProps } from 'next/app';
 import Head from 'next/head';
 import Script from 'next/script';
-import { Footer, Header } from '@/components';
+import { Footer, Header } from 'components';
 import '../public/style.css';
 
 const App = ({ Component, pageProps }: AppProps) => (

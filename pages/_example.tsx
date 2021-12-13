@@ -3,8 +3,8 @@ import { GetStaticProps, InferGetStaticPropsType } from 'next';
 import { useRouter } from 'next/router';
 import gql from 'gql-tag';
 import { client } from '../client';
-import { formatStaticPaths } from '@/helpers/formatStaticPaths';
-import { Fallback, Page } from '@/components';
+import { formatStaticPaths } from 'helpers/formatStaticPaths';
+import { Fallback, Page } from 'components';
 
 const Post = ({ post }: InferGetStaticPropsType<typeof getStaticProps>) => {
   const { isFallback } = useRouter();
