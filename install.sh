@@ -2,7 +2,7 @@ cp .env.example .env;
 
 yarn add\
   dayjs\
-  gql-tag\
+  fake-tag\
   graphql\
   next\
   react\

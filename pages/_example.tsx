@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { GetStaticProps, InferGetStaticPropsType } from 'next';
 import { useRouter } from 'next/router';
-import gql from 'gql-tag';
+import gql from 'fake-tag';
 import { client } from '../client';
 import { formatStaticPaths } from 'helpers/formatStaticPaths';
 import { Fallback, Page } from 'components';

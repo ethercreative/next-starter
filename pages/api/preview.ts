@@ -1,5 +1,5 @@
 import { NextApiRequest, NextApiResponse } from 'next';
-import gql from 'gql-tag';
+import gql from 'fake-tag';
 import { client } from 'client';
 
 const preview = async (req: NextApiRequest, res: NextApiResponse) => {
