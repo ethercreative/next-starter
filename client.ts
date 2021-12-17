@@ -30,7 +30,14 @@ export const client = (context?: GetStaticPropsContext<ParsedUrlQuery>) => {
       headers['Authorization'] = `Bearer ${process.env.GRAPH_TOKEN}`;
     }
 
-    const { data }: { data: T } = await (
+    interface Response {
+      data: T;
+      errors: {
+        message: string;
+      }[];
+    }
+
+    const { data, errors }: Response = await (
       await fetch(endpoint, {
         method: 'POST',
         headers,
@@ -40,6 +47,10 @@ export const client = (context?: GetStaticPropsContext<ParsedUrlQuery>) => {
         }),
       })
     ).json();
+
+    if (errors?.length) {
+      throw new Error(errors[0].message);
+    }
 
     return data;
   };
