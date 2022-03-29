@@ -23,6 +23,7 @@ yarn add --dev\
   eslint-config-prettier\
   postcss\
   prettier\
+  prettier-plugin-tailwindcss\
   tailwindcss\
   typescript;
 
