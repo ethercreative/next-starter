@@ -4,7 +4,7 @@ interface KeyVal {
   [x: string]: any;
 }
 
-export const useForm = (initialValues: KeyVal) => {
+export const useForm = <FormTypes extends KeyVal>(initialValues: FormTypes) => {
   type FieldName = keyof typeof initialValues;
 
   interface UpdatedValue {
@@ -12,7 +12,7 @@ export const useForm = (initialValues: KeyVal) => {
     value: any;
   }
 
-  const reducer = (prevState: KeyVal, { key, value }: UpdatedValue) => ({
+  const reducer = (prevState: FormTypes, { key, value }: UpdatedValue) => ({
     ...prevState,
     [key]: value,
   });
