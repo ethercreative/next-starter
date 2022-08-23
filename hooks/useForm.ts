@@ -1,32 +1,33 @@
 import * as React from 'react';
 
-type AllowedValues = string | number | boolean;
-
 interface KeyVal {
-  [x: string]: AllowedValues;
+  [x: string]: any;
 }
 
-export const useForm = <FormTypes extends KeyVal>(initialValues: FormTypes) => {
+export const useForm = (initialValues: KeyVal) => {
   type FieldName = keyof typeof initialValues;
 
   interface UpdatedValue {
     key: FieldName;
-    value: AllowedValues;
+    value: any;
   }
 
-  const reducer = (prevState: FormTypes, { key, value }: UpdatedValue) => ({
+  const reducer = (prevState: KeyVal, { key, value }: UpdatedValue) => ({
     ...prevState,
     [key]: value,
   });
 
   const [state, dispatch] = React.useReducer(reducer, initialValues);
 
-  const onChange = React.useCallback((key: FieldName, value: AllowedValues) => {
-    dispatch({
-      key,
-      value,
-    });
-  }, []);
+  const onChange = React.useCallback(
+    (key: FieldName, value: typeof initialValues[typeof key]) => {
+      dispatch({
+        key,
+        value,
+      });
+    },
+    [],
+  );
 
   return { state, onChange };
 };
