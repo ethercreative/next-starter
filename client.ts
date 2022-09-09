@@ -17,7 +17,7 @@ export const client = (context?: GetStaticPropsContext<ParsedUrlQuery>) => {
     endpoint += `?token=${previewData?.previewToken}`;
   }
 
-  const request = async <T>(
+  const request = async <T = any>(
     query: string,
     variables: Variables = {},
   ): Promise<T> => {
