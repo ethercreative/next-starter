@@ -1,5 +1,4 @@
 import { NextApiRequest, NextApiResponse } from 'next';
-import gql from 'fake-tag';
 import { client } from 'client';
 
 const preview = async (req: NextApiRequest, res: NextApiResponse) => {
@@ -11,7 +10,7 @@ const preview = async (req: NextApiRequest, res: NextApiResponse) => {
     }
 
     const { entry } = await client().request(
-      gql`
+      /* GraphQL */ `
         query Preview($uid: String!) {
           entry(uid: [$uid], status: null) {
             url

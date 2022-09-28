@@ -1,7 +1,7 @@
 import * as React from 'react';
 import NextLink from 'next/link';
 
-interface Props {
+interface Props extends React.PropsWithChildren {
   href: string;
   scroll?: boolean;
   replace?: boolean;

@@ -1,3 +1,4 @@
+/** @type {import('next').NextConfig} */
 module.exports = {
   experimental: {
     optimizeCss: {
@@ -25,12 +26,16 @@ module.exports = {
             value: 'nosniff',
           },
           {
-            key: 'X-Frame-Options',
-            value: process.env.X_FRAME_OPTIONS ?? 'SAMEORIGIN',
-          },
-          {
             key: 'X-XSS-Protection',
             value: '1',
+          },
+          {
+            key: 'Access-Control-Allow-Origin',
+            value: process.env.ADMIN_URL,
+          },
+          {
+            key: 'Access-Control-Allow-Credentials',
+            value: 'true',
           },
         ],
       },

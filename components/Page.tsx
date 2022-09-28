@@ -1,7 +1,7 @@
 import * as React from 'react';
 import Head from 'next/head';
 
-interface Props {
+interface Props extends React.PropsWithChildren {
   // Uncomment this once hooked up to Craft and types have been generated
   // seo: Ether_SeoData;
   seo: {
