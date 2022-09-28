@@ -15,7 +15,7 @@ export const Link: React.FC<Props> = ({
   scroll = true,
   replace,
   prefetch,
-  className = '',
+  className,
   style = {},
   children = null,
 }) => (
