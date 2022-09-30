@@ -19,6 +19,7 @@ yarn add --dev\
   eslint\
   eslint-config-next\
   eslint-config-prettier\
+  graphql\
   postcss\
   prettier\
   prettier-plugin-tailwindcss\
