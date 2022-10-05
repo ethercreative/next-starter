@@ -1,10 +1,6 @@
 import * as React from 'react';
 
-interface KeyVal {
-  [x: string]: any;
-}
-
-export const useForm = <FormTypes extends KeyVal>(initialValues: FormTypes) => {
+export const useForm = <T>(initialValues: T) => {
   type FieldName = keyof typeof initialValues;
 
   interface UpdatedValue {
@@ -12,7 +8,7 @@ export const useForm = <FormTypes extends KeyVal>(initialValues: FormTypes) => {
     value: any;
   }
 
-  const reducer = (prevState: FormTypes, { key, value }: UpdatedValue) => ({
+  const reducer = (prevState: T, { key, value }: UpdatedValue) => ({
     ...prevState,
     [key]: value,
   });
