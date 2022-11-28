@@ -22,6 +22,7 @@ yarn add --dev\
   graphql\
   postcss\
   prettier\
+  prettier-plugin-organize-imports\
   prettier-plugin-tailwindcss\
   tailwindcss\
   typescript;
