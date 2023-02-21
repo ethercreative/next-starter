@@ -1,5 +1,4 @@
 import Head from 'next/head';
-import * as React from 'react';
 
 interface Props extends React.PropsWithChildren {
   seo: {

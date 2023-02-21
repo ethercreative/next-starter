@@ -1,5 +1,3 @@
-import * as React from 'react';
-
 export const useForm = <T>(initialValues: T) => {
   type FieldName = keyof typeof initialValues;
 
@@ -15,15 +13,12 @@ export const useForm = <T>(initialValues: T) => {
 
   const [state, dispatch] = React.useReducer(reducer, initialValues);
 
-  const onChange = React.useCallback(
-    (key: FieldName, value: (typeof initialValues)[typeof key]) => {
-      dispatch({
-        key,
-        value,
-      });
-    },
-    [],
-  );
+  const onChange = React.useCallback((key: FieldName, value: typeof initialValues[typeof key]) => {
+    dispatch({
+      key,
+      value,
+    });
+  }, []);
 
   return { state, onChange };
 };

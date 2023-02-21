@@ -1,5 +1,3 @@
-import * as React from 'react';
-
 type Network = 'idle' | 'busy' | 'error';
 
 export const useNetwork = (defaultStatus?: Network) => {

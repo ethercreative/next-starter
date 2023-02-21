@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { GetStaticProps, InferGetStaticPropsType } from 'next';
 import { useRouter } from 'next/router';
 import { client } from '../client';
