@@ -17,10 +17,7 @@ export const client = (context?: GetStaticPropsContext<ParsedUrlQuery>) => {
     endpoint += `?token=${previewData?.previewToken}`;
   }
 
-  const request = async <T = any>(
-    query: string,
-    variables: Variables = {},
-  ): Promise<T> => {
+  const request = async <T = any>(query: string, variables: Variables = {}): Promise<T> => {
     const headers: HeadersInit = {
       'Content-Type': 'application/json',
       Accept: 'application/json',

@@ -1,6 +1,4 @@
-import * as React from 'react';
-
-export const Header: React.FC = () => (
+export const Header = () => (
   <header className='flex flex-row justify-between'>
     <p>logo</p>
     <p>nav</p>

@@ -1,11 +1,8 @@
 /** @type {import('next').NextConfig} */
 module.exports = {
   experimental: {
-    optimizeCss: {
-      inlineFonts: true,
-      preloadFonts: true,
-      fonts: true,
-    },
+    optimizeCss: true,
+    scrollRestoration: true,
   },
   images: {
     domains: ['project.ethr.dev', 'project.ams3.cdn.digitaloceanspaces.com'],
@@ -36,15 +33,6 @@ module.exports = {
           {
             key: 'Access-Control-Allow-Credentials',
             value: 'true',
-          },
-        ],
-      },
-      {
-        source: '/fonts/(.*)',
-        headers: [
-          {
-            key: 'Cache-Control',
-            value: 'public, max-age=315360000',
           },
         ],
       },

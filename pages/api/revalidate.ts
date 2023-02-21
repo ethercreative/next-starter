@@ -6,10 +6,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
   }
 
   try {
-    await res.revalidate(
-      '/' + String(req.query.path).replace(/^\//, '').replace('__home__', ''),
-    );
-
+    await res.revalidate('/' + String(req.query.path).replace(/^\//, '').replace('__home__', ''));
     return res.json({ revalidated: true });
   } catch (err) {
     return res.status(500).send('Error revalidating');
