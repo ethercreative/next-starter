@@ -10,6 +10,7 @@ yarn add --dev\
   @graphql-codegen/cli\
   @graphql-codegen/typescript\
   @graphql-codegen/typescript-operations\
+  @types/node\
   @types/react\
   @types/react-dom\
   @typescript-eslint/eslint-plugin\

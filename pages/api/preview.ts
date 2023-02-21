@@ -1,12 +1,10 @@
-import { NextApiRequest, NextApiResponse } from 'next';
 import { client } from 'client';
+import { NextApiRequest, NextApiResponse } from 'next';
 
 const preview = async (req: NextApiRequest, res: NextApiResponse) => {
   try {
     if (!req.query.entryUid) {
-      return res
-        .status(401)
-        .json({ message: 'Not allowed to access this route' });
+      return res.status(401).json({ message: 'Not allowed to access this route' });
     }
 
     const { entry } = await client().request(

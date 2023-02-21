@@ -11,14 +11,11 @@ const App = ({ Component, pageProps }: AppProps) => (
       <link rel='icon' href='/assets/favicon.svg' />
     </Head>
 
-    <div className='grid gap-y-16 md:gap-y-24'>
-      <Header />
-      <Component {...pageProps} />
-      <Footer />
-    </div>
+    <Header />
+    <Component {...pageProps} />
+    <Footer />
 
-    {process.env.NODE_ENV !== 'development' &&
-    process.env.NEXT_PUBLIC_GA_TAG ? (
+    {process.env.NODE_ENV !== 'development' && process.env.NEXT_PUBLIC_GA_TAG ? (
       <>
         <Script
           strategy='afterInteractive'

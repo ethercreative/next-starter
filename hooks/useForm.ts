@@ -16,7 +16,7 @@ export const useForm = <T>(initialValues: T) => {
   const [state, dispatch] = React.useReducer(reducer, initialValues);
 
   const onChange = React.useCallback(
-    (key: FieldName, value: typeof initialValues[typeof key]) => {
+    (key: FieldName, value: (typeof initialValues)[typeof key]) => {
       dispatch({
         key,
         value,

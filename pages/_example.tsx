@@ -1,7 +1,6 @@
 import * as React from 'react';
 import { GetStaticProps, InferGetStaticPropsType } from 'next';
 import { useRouter } from 'next/router';
-import gql from 'fake-tag';
 import { client } from '../client';
 import { formatStaticPaths } from 'helpers/formatStaticPaths';
 import { Fallback, Page } from 'components';
@@ -26,7 +25,7 @@ interface Data {
 
 export const getStaticProps: GetStaticProps<Data> = async (context) => {
   const data = await client(context).request<Data>(
-    gql`
+    /* GraphQL */ `
       query Post($slug: String!) {
         post: entry(slug: [$slug]) {
           ... on post_post_Entry {
@@ -52,15 +51,13 @@ export const getStaticProps: GetStaticProps<Data> = async (context) => {
 };
 
 export const getStaticPaths = async () => {
-  const { posts } = await client().request(
-    gql`
-      query PostSlugs {
-        posts: entries(section: "post") {
-          slug
-        }
+  const { posts } = await client().request(/* GraphQL */ `
+    query PostSlugs {
+      posts: entries(section: "post") {
+        slug
       }
-    `,
-  );
+    }
+  `);
 
   return formatStaticPaths(posts);
 };
