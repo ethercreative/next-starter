@@ -51,6 +51,10 @@ module.exports = {
         source: '/sitemap:path.xml',
         destination: `${process.env.ADMIN_URL}/sitemap:path.xml`,
       },
+      {
+        source: '/robots.txt',
+        destination: `${process.env.ADMIN_URL}/robots.txt`,
+      },
     ];
   },
   i18n: {
