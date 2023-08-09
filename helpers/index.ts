@@ -1,1 +1,2 @@
-export { formatDate } from './formatDate';
+export * from './classify';
+export * from './formatDate';

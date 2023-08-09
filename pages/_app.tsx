@@ -1,7 +1,6 @@
 import type { AppProps } from 'next/app';
 import Head from 'next/head';
 import Script from 'next/script';
-import { Footer, Header } from 'components';
 import '../public/style.css';
 
 const App = ({ Component, pageProps }: AppProps) => (
@@ -10,9 +9,7 @@ const App = ({ Component, pageProps }: AppProps) => (
       <link rel='icon' href='/assets/favicon.svg' />
     </Head>
 
-    <Header />
     <Component {...pageProps} />
-    <Footer />
 
     {process.env.NODE_ENV !== 'development' && process.env.NEXT_PUBLIC_GA_TAG ? (
       <>

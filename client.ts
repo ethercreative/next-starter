@@ -10,7 +10,7 @@ interface Variables {
 }
 
 export const client = (context?: GetStaticPropsContext<ParsedUrlQuery>) => {
-  let endpoint = process.env.GRAPH_URL;
+  let endpoint = process.env.NEXT_PUBLIC_GRAPH_URL ?? process.env.GRAPH_URL;
   const previewData = (context?.previewData as PreviewData) ?? null;
 
   if (previewData?.previewToken) {
