@@ -1,12 +1,12 @@
 cp .env.example .env;
 
-yarn add\
+bun add\
   dayjs\
   next\
   react\
   react-dom;
 
-yarn add --dev\
+bun add --dev\
   @graphql-codegen/cli\
   @graphql-codegen/typescript\
   @graphql-codegen/typescript-operations\
