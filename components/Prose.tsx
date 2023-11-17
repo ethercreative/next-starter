@@ -1,9 +1,29 @@
-import { Props as TextProps } from 'components';
-import { classify } from 'helpers';
-import { useTextAlign, useTextAlpha, useTextColor, useTextTransform, useTextWeight } from 'hooks';
+import { Text } from 'components/Text';
+import { classify } from 'helpers/classify';
+import { useTextAlign } from 'hooks/useTextAlign';
+import { useTextAlpha } from 'hooks/useTextAlpha';
+import { useTextColor } from 'hooks/useTextColor';
+import { useTextTransform } from 'hooks/useTextTransform';
+import { useTextWeight } from 'hooks/useTextWeight';
+import { useTextWrap } from 'hooks/useTextWrap';
 
-interface Props extends TextProps {
-  spaceY?: 'sm' | 'base';
+const variants = {
+  spaceY: {
+    sm: 'gap-y-3 lg:gap-y-4',
+    base: 'gap-y-4 lg:gap-y-6',
+  },
+  size: {
+    xs: 'text-xs',
+    sm: 'text-xs lg:text-sm',
+    base: 'text-sm lg:text-base',
+    md: 'lg:text-lg',
+    lg: 'text-lg lg:text-xl',
+    xl: 'text-xl lg:text-2xl',
+  },
+};
+
+interface Props extends React.ComponentProps<typeof Text> {
+  spaceY?: keyof typeof variants.spaceY;
   children: string;
 }
 
@@ -15,64 +35,32 @@ export const Prose = ({
   align,
   alpha,
   transform,
+  wrap = 'balance',
   className,
   children,
 }: Props) => {
-  let _spaceY = '';
-
-  switch (spaceY) {
-    case 'sm':
-      _spaceY = 'gap-y-3 lg:gap-y-4';
-      break;
-
-    case 'base':
-      _spaceY = 'gap-y-4 lg:gap-y-6';
-      break;
-  }
-
-  let _size = '';
-
-  switch (size) {
-    case 'xs':
-      _size = 'text-xs';
-      break;
-
-    case 'sm':
-      _size = 'text-xs lg:text-sm';
-      break;
-
-    case 'base':
-      _size = 'text-sm lg:text-base';
-      break;
-
-    case 'md':
-      _size = 'lg:text-lg';
-      break;
-
-    case 'lg':
-      _size = 'text-lg lg:text-xl';
-      break;
-
-    case 'xl':
-      _size = 'text-xl lg:text-2xl';
-      break;
-  }
-
   const _className = classify([
     'flex flex-col prose',
-    _spaceY,
-    _size,
+    variants.spaceY[spaceY],
+    variants.size[size],
     useTextColor(color),
     useTextWeight(weight),
     useTextAlign(align),
     useTextAlpha(alpha),
     useTextTransform(transform),
+    useTextWrap(wrap),
     className,
   ]);
 
-  if (!Boolean(children?.trim())) {
+  let content = children?.trim();
+
+  if (!content) {
     return null;
   }
 
-  return <div className={_className} dangerouslySetInnerHTML={{ __html: children.trim() }} />;
+  if (!content.includes('<p>')) {
+    content = `<p>${content}</p>`;
+  }
+
+  return <div className={_className} dangerouslySetInnerHTML={{ __html: content }} />;
 };

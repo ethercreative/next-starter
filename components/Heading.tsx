@@ -1,24 +1,32 @@
-import { classify } from 'helpers';
-import {
-  TextAlign,
-  TextAlpha,
-  TextTransform,
-  TextWeight,
-  useTextAlign,
-  useTextAlpha,
-  useTextColor,
-  useTextTransform,
-  useTextWeight,
-} from 'hooks';
+import { classify } from 'helpers/classify';
+import { TextAlign, useTextAlign } from 'hooks/useTextAlign';
+import { TextAlpha, useTextAlpha } from 'hooks/useTextAlpha';
+import { useTextColor } from 'hooks/useTextColor';
+import { TextTransform, useTextTransform } from 'hooks/useTextTransform';
+import { TextWeight, useTextWeight } from 'hooks/useTextWeight';
+import { TextWrap, useTextWrap } from 'hooks/useTextWrap';
 
-interface Props extends React.HTMLAttributes<HTMLHeadingElement>, React.PropsWithChildren {
+const variants = {
+  size: {
+    xs: 'md:text-lg 3xl:text-xl -my-1',
+    sm: 'text-lg md:text-xl 3xl:text-2xl -my-1',
+    base: 'text-xl md:text-2xl 3xl:text-3xl -my-1',
+    md: 'text-2xl md:text-3xl 3xl:text-4xl -my-1',
+    lg: 'text-3xl md:text-4xl 3xl:text-5xl -my-2',
+    xl: 'text-4xl md:text-5xl 3xl:text-6xl -my-3',
+    '2xl': 'text-5xl md:text-6xl 3xl:text-7xl -my-3',
+  },
+};
+
+interface Props extends React.ComponentProps<'h1'> {
   level?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
-  size?: Size | '2xl';
+  size?: keyof typeof variants.size;
   color?: Color;
   weight?: TextWeight;
   align?: TextAlign;
   alpha?: TextAlpha;
   transform?: TextTransform;
+  wrap?: TextWrap;
 }
 
 export const Heading = ({
@@ -29,52 +37,30 @@ export const Heading = ({
   align,
   alpha,
   transform,
+  wrap = 'balance',
   className,
   children,
   ...props
 }: Props) => {
-  let _size = '';
-
-  switch (size) {
-    case 'xs':
-      _size = 'md:text-lg 3xl:text-xl -my-1';
-      break;
-
-    case 'sm':
-      _size = 'text-lg md:text-xl 3xl:text-2xl -my-1';
-      break;
-
-    case 'base':
-      _size = 'text-xl md:text-2xl 3xl:text-3xl -my-1';
-      break;
-
-    case 'md':
-      _size = 'text-2xl md:text-3xl 3xl:text-4xl -my-1';
-      break;
-
-    case 'lg':
-      _size = 'text-3xl md:text-4xl 3xl:text-5xl -my-2';
-      break;
-
-    case 'xl':
-      _size = 'text-4xl md:text-5xl 3xl:text-6xl -my-3';
-      break;
-
-    case '2xl':
-      _size = 'text-5xl md:text-6xl 3xl:text-7xl -my-3';
-      break;
-  }
-
   const _className = classify([
     '!leading-[1.125]',
-    _size,
+    variants.size[size],
     useTextColor(color),
     useTextWeight(weight),
     useTextAlign(align),
     useTextAlpha(alpha),
     useTextTransform(transform),
+    useTextWrap(wrap),
     className,
   ]);
+
+  const isString = typeof children === 'string';
+
+  if (isString) {
+    return (
+      <Level className={_className} {...props} dangerouslySetInnerHTML={{ __html: children }} />
+    );
+  }
 
   return (
     <Level className={_className} {...props}>

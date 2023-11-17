@@ -1,29 +1,23 @@
-import { classify } from 'helpers';
+import { classify } from 'helpers/classify';
+
+const variants = {
+  padding: {
+    dynamic: 'px-6 md:px-10',
+    fixed: 'px-6',
+  },
+};
 
 interface Props extends React.PropsWithChildren {
+  padding?: keyof typeof variants.padding;
   grow?: boolean;
-  padding?: 'dynamic' | 'fixed';
 }
 
-export const Container = ({ grow, padding = 'dynamic', children }: Props) => {
-  let _grow = '';
+export const Container = ({ padding = 'dynamic', grow, children }: Props) => {
+  const _className = classify([
+    '2xl:container relative isolate mx-auto w-full',
+    variants.padding[padding],
+    grow ? 'h-full grow' : undefined,
+  ]);
 
-  if (grow) {
-    _grow = 'h-full grow';
-  }
-
-  let _padding = '';
-
-  switch (padding) {
-    case 'dynamic':
-      _padding = 'px-6 md:px-10';
-      break;
-
-    case 'fixed':
-      _padding = 'px-6';
-      break;
-  }
-
-  const _className = classify(['2xl:container relative isolate mx-auto w-full', _grow, _padding]);
   return <div className={_className}>{children}</div>;
 };

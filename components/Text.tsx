@@ -1,23 +1,30 @@
-import { classify } from 'helpers';
-import {
-  TextAlign,
-  TextAlpha,
-  TextTransform,
-  TextWeight,
-  useTextAlign,
-  useTextAlpha,
-  useTextColor,
-  useTextTransform,
-  useTextWeight,
-} from 'hooks';
+import { classify } from 'helpers/classify';
+import { TextAlign, useTextAlign } from 'hooks/useTextAlign';
+import { TextAlpha, useTextAlpha } from 'hooks/useTextAlpha';
+import { useTextColor } from 'hooks/useTextColor';
+import { TextTransform, useTextTransform } from 'hooks/useTextTransform';
+import { TextWeight, useTextWeight } from 'hooks/useTextWeight';
+import { TextWrap, useTextWrap } from 'hooks/useTextWrap';
 
-export interface Props extends React.HTMLAttributes<HTMLParagraphElement>, React.PropsWithChildren {
-  size?: Size;
+const variants = {
+  size: {
+    xs: 'text-xs',
+    sm: 'text-sm',
+    base: 'text-base',
+    md: 'text-lg',
+    lg: 'text-xl',
+    xl: 'text-2xl',
+  },
+};
+
+interface Props extends React.ComponentProps<'p'> {
+  size?: keyof typeof variants.size;
   color?: Color;
   weight?: TextWeight;
   align?: TextAlign;
   alpha?: TextAlpha;
   transform?: TextTransform;
+  wrap?: TextWrap;
 }
 
 export const Text = ({
@@ -27,46 +34,20 @@ export const Text = ({
   align,
   alpha,
   transform,
+  wrap = 'balance',
   className,
   children,
   ...props
 }: Props) => {
-  let _size = '';
-
-  switch (size) {
-    case 'xs':
-      _size = 'text-xs';
-      break;
-
-    case 'sm':
-      _size = 'text-sm';
-      break;
-
-    case 'base':
-      _size = 'text-base';
-      break;
-
-    case 'md':
-      _size = 'text-lg';
-      break;
-
-    case 'lg':
-      _size = 'text-xl';
-      break;
-
-    case 'xl':
-      _size = 'text-2xl';
-      break;
-  }
-
   const _className = classify([
     '-my-1',
-    _size,
+    variants.size[size],
     useTextColor(color),
     useTextWeight(weight),
     useTextAlign(align),
     useTextAlpha(alpha),
     useTextTransform(transform),
+    useTextWrap(wrap),
     className,
   ]);
 

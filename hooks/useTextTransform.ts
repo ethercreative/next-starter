@@ -1,13 +1,8 @@
-export type TextTransform = 'uppercase';
+export type TextTransform = 'uppercase' | 'normal';
 
-export const useTextTransform = (transform: TextTransform) => {
-  let _transform = '';
-
-  switch (transform) {
-    case 'uppercase':
-      _transform = 'uppercase';
-      break;
-  }
-
-  return _transform;
+const transforms: { [key in TextTransform]: string } = {
+  uppercase: 'uppercase',
+  normal: undefined,
 };
+
+export const useTextTransform = (transform: TextTransform) => transforms[transform];

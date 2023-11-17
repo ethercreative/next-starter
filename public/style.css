@@ -3,6 +3,25 @@
 @tailwind utilities;
 
 @layer base {
+  html,
+  body {
+    @apply antialiased;
+  }
+
+  figure {
+    @apply relative;
+  }
+
+  .balance {
+    text-wrap: balance;
+  }
+
+  h1:empty,
+  h2:empty,
+  h3:empty,
+  h4:empty,
+  h5:empty,
+  h6:empty,
   p:empty {
     @apply hidden;
   }

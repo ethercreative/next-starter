@@ -1,21 +1,44 @@
-import { classify } from 'helpers';
-import * as React from 'react';
+import { classify } from 'helpers/classify';
 
-type Span = '1' | '2' | '3' | '4' | '5' | '6' | '7' | '8' | '9' | '10' | '11' | '12';
+const variants = {
+  span: {
+    1: 'col-span-12 md:col-span-1',
+    2: 'col-span-12 md:col-span-2',
+    3: 'col-span-12 md:col-span-3',
+    4: 'col-span-12 md:col-span-4',
+    5: 'col-span-12 md:col-span-5',
+    6: 'col-span-12 md:col-span-6',
+    7: 'col-span-12 md:col-span-7',
+    8: 'col-span-12 md:col-span-8',
+    9: 'col-span-12 md:col-span-9',
+    10: 'col-span-12 md:col-span-10',
+    11: 'col-span-12 md:col-span-11',
+    12: 'col-span-12',
+  },
+  start: {
+    1: 'col-span-1',
+    2: 'col-span-2',
+    3: 'col-span-3',
+    4: 'col-span-4',
+    5: 'col-span-5',
+    6: 'col-span-6',
+    7: 'col-span-7',
+    8: 'col-span-8',
+    9: 'col-span-9',
+    10: 'col-span-10',
+    11: 'col-span-11',
+    12: 'col-span-12',
+    13: 'col-span-13',
+  },
+};
 
 interface Props extends React.PropsWithChildren {
-  span?: Span;
-  start?: Span | '13';
+  span?: keyof typeof variants.span;
+  start?: keyof typeof variants.start;
   className?: string;
 }
 
-// md:col-span-1 md:col-span-2 md:col-span-3 md:col-span-4 md:col-span-5 md:col-span-6 md:col-span-7 md:col-span-8 md:col-span-9 md:col-span-10 md:col-span-11 md:col-span-12
-// md:col-start-1 md:col-start-2 md:col-start-3 md:col-start-4 md:col-start-5 md:col-start-6 md:col-start-7 md:col-start-8 md:col-start-9 md:col-start-10 md:col-start-11 md:col-start-12 md:col-start-13
-
 export const Column = ({ span, start, className, children }: Props) => {
-  const _span = span ? `col-span-12 md:col-span-${span}` : null;
-  const _start = start ? `md:col-start-${start}` : null;
-  const _className = classify([_span, _start, className]);
-
+  const _className = classify([variants.span[span], variants.start[start], className]);
   return <div className={_className}>{children}</div>;
 };

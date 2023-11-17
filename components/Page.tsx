@@ -5,7 +5,7 @@ interface Props extends React.PropsWithChildren {
   seo: {
     title: string;
     description?: string;
-  }
+  };
 }
 
 export const Page = ({ seo, children }: Props) => (

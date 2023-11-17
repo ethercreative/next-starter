@@ -1,19 +1,7 @@
-export const useTextColor = (color: Color) => {
-  let _color = '';
-
-  switch (color) {
-    case 'transparent':
-      _color = 'text-transparent';
-      break;
-
-    case 'white':
-      _color = 'text-white';
-      break;
-
-    case 'black':
-      _color = 'text-black';
-      break;
-  }
-
-  return _color;
+const colors: { [key in Color]: string } = {
+  transparent: 'text-transparent',
+  white: 'text-white',
+  black: 'text-black',
 };
+
+export const useTextColor = (color: Color) => colors[color];

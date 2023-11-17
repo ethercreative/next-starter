@@ -1,10 +1,5 @@
-export type TextWeight = 'regular';
+export type TextWeight = '';
 
-export const useTextWeight = (weight: TextWeight) => {
-  let _weight = '';
+const weights = {};
 
-  switch (weight) {
-  }
-
-  return _weight;
-};
+export const useTextWeight = (weight: TextWeight) => weights[weight];

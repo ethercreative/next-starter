@@ -1,13 +1,8 @@
 export type TextAlpha = 'opaque' | 'faded';
 
-export const useTextAlpha = (alpha: TextAlpha) => {
-  let _alpha = '';
-
-  switch (alpha) {
-    case 'faded':
-      _alpha = 'opacity-50';
-      break;
-  }
-
-  return _alpha;
+const opacities: { [key in TextAlpha]: string } = {
+  faded: 'opacity-60',
+  opaque: undefined,
 };
+
+export const useTextAlpha = (alpha: TextAlpha) => opacities[alpha];

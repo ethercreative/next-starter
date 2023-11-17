@@ -1,19 +1,7 @@
-export const useBackgroundColor = (color: Color) => {
-  let _color = '';
-
-  switch (color) {
-    case 'transparent':
-      _color = 'bg-transparent';
-      break;
-
-    case 'white':
-      _color = 'bg-white';
-      break;
-
-    case 'black':
-      _color = 'bg-black';
-      break;
-  }
-
-  return _color;
+const colors: { [key in Color]: string } = {
+  transparent: 'bg-transparent',
+  white: 'bg-white',
+  black: 'bg-black',
 };
+
+export const useBackgroundColor = (color: Color) => colors[color];
