@@ -9,7 +9,7 @@ module.exports = {
     formats: ['image/avif', 'image/webp'],
     minimumCacheTTL: 315360000,
   },
-  async headers() {
+  headers() {
     return [
       {
         source: '/:path*',
@@ -38,10 +38,10 @@ module.exports = {
       },
     ];
   },
-  async redirects() {
+  redirects() {
     return [];
   },
-  async rewrites() {
+  rewrites() {
     return [
       {
         source: '/sitemap.xml',
