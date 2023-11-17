@@ -8,13 +8,12 @@ import { TextWrap, useTextWrap } from 'hooks/useTextWrap';
 
 const variants = {
   size: {
-    xs: 'md:text-lg 3xl:text-xl -my-1',
-    sm: 'text-lg md:text-xl 3xl:text-2xl -my-1',
-    base: 'text-xl md:text-2xl 3xl:text-3xl -my-1',
-    md: 'text-2xl md:text-3xl 3xl:text-4xl -my-1',
-    lg: 'text-3xl md:text-4xl 3xl:text-5xl -my-2',
-    xl: 'text-4xl md:text-5xl 3xl:text-6xl -my-3',
-    '2xl': 'text-5xl md:text-6xl 3xl:text-7xl -my-3',
+    xs: 'md:text-lg lg:text-xl -my-1',
+    sm: 'text-lg md:text-xl lg:text-2xl -my-1',
+    base: 'text-xl md:text-2xl lg:text-3xl -my-1',
+    md: 'text-2xl md:text-3xl lg:text-4xl -my-1',
+    lg: 'text-3xl md:text-4xl lg:text-5xl -my-2',
+    xl: 'text-4xl md:text-5xl lg:text-6xl -my-2',
   },
 };
 
