@@ -5,7 +5,18 @@ module.exports = {
     scrollRestoration: true,
   },
   images: {
-    domains: ['project.ethr.dev', 'project.ams3.cdn.digitaloceanspaces.com'],
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'project.ethr.dev',
+        pathname: '**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'project.ams3.cdn.digitaloceanspaces.com',
+        pathname: '**',
+      },
+    ],
     formats: ['image/avif', 'image/webp'],
     minimumCacheTTL: 315360000,
   },
